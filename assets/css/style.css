@@ -1,0 +1,103 @@
+/* This area defines the color pallet of the website and provides some default box shadowing and border rounding */
+:root {
+  --darkGreen: rgba(74, 98, 74, 255);
+  --leafGreen: rgb(80, 179, 80, 0.75);
+  --woodBrown: rgb(97, 57, 31, 0.75);
+  --innerWood: rgb(199, 164, 119);
+  --borderRounding: 10px;
+  --borderShadow: 1px 1px 3px black;
+}
+/* Defining the default text expectations through the website as well as setting a margin to ensure the website is readable.
+     This also sets Flex display as the default to all boxes in the webpage */
+* {
+  color: var(--innerWood);
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  word-wrap: normal;
+  /* border: 1px solid black; */
+}
+
+/* A work around was required here to allow for Flex display to be set as the default without showing the head or script boxes. */
+head {
+  display: none;
+}
+script {
+  display: none;
+}
+
+/* This defines the background of the website and sets it so that the webpage scrolls and the background image stays static. */
+body {
+  background-attachment: fixed;
+  background-color: var(--darkGreen);
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: auto;
+  flex-direction: column;
+  padding: 2%;
+  width: 100%;
+  height: 100%;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: var(--innerWood);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--woodBrown);
+  /* text-decoration: underline; */
+}
+i:hover {
+  color: var(--woodBrown);
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+#My-Work ul {
+  border-right: 0.5rem solid var(--woodBrown);
+}
+#border-start {
+  background-color: var(--woodBrown);
+  margin: 0;
+  border: 0;
+}
+#border-end {
+  margin: 0;
+  padding: 2em;
+  background-color: var(--darkGreen);
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    1em 8em,
+    1em 1em,
+    9em 1em,
+    10em -0.1em,
+    101% -0.1em,
+    101% calc(100% - 10em),
+    calc(100% - 1em) calc(100% - 9em),
+    calc(100% - 1em) calc(100% - 1em),
+    calc(100% - 8em) calc(100% - 1em),
+    calc(100% - 9em) 100%,
+    -0.1em 100%,
+    -0.1em 9em
+  );
+}
+img {
+  width: 25%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+h1 {
+  width: 50%;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  justify-content: center;
+  align-self: flex-end;
+}
+p {
+  border-right: 0.5rem solid var(--woodBrown);
+}
