@@ -101,3 +101,9 @@ h3 {
 p {
   border-right: 0.5rem solid var(--woodBrown);
 }
+
+@media screen and (max-width: 900px) {
+  h1 {
+    width: 90%;
+  }
+}
